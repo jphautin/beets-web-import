@@ -24,9 +24,9 @@ from flask import Flask
 
 # Plugin hook.
 
-class WebPlugin(BeetsPlugin):
+class WebImportPlugin(BeetsPlugin):
     def __init__(self):
-        super(WebPlugin, self).__init__()
+        super(WebImportPlugin, self).__init__()
         self.config.add({
             'host': u'127.0.0.1',
             'port': 8337,
@@ -34,7 +34,7 @@ class WebPlugin(BeetsPlugin):
         })
 
     def commands(self):
-        cmd = ui.Subcommand('web', help=u'start a Web interface')
+        cmd = ui.Subcommand('webimport', help=u'start a Web interface to manage imports')
         cmd.parser.add_option(u'-d', u'--debug', action='store_true',
                               default=False, help=u'debug mode')
 
